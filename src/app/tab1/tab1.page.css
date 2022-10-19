@@ -1,0 +1,12 @@
+ion-button {
+  margin: 15px;
+  height: 40px;
+}
+
+.tittlerow {
+  border: 2px primary;
+  color: #fff;
+  font-size: inherit;
+  background: linear-gradient(90deg, var(--ion-color-primary), #94a7a2);
+  font-weight: bold;
+}/*# sourceMappingURL=tab1.page.css.map */

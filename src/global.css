@@ -1,0 +1,189 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+.linha1 {
+  background: #F5F6FA;
+}
+
+ion-tab-button {
+  background: #618078;
+  color: white;
+}
+
+.modal-wrapper {
+  background: transparent !important;
+}
+
+ion-header ion-toolbar, ion-header ion-item {
+  --background: var(--ion-color-primary);
+  background: var(--ion-color-primary);
+  padding: 0 10px;
+}
+ion-header ion-toolbar .bordered {
+  --border-radius: 10px;
+  --box-shadow: 5px 5px 10px #d1d1d1, -5px -5px 10px #FFFFFF;
+}
+ion-header ion-item h3 {
+  font-weight: 700;
+  font-size: 14px;
+}
+ion-header ion-item p {
+  font-weight: 500;
+  font-size: 14px;
+}
+ion-header ion-item ion-avatar {
+  --border-radius: 40%;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../src/assets/fonts/Roboto-Light.ttf");
+}
+ion-content {
+  --background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255) 35%, rgba(255, 255, 255) 100%);
+}
+ion-content .slides {
+  background: var(--ion-color-primary);
+  padding: 4px 10px 20px 10px;
+  border-radius: 0 0 28px 28px;
+}
+ion-content ion-card {
+  width: 100%;
+  height: 5rem;
+  box-shadow: none;
+  border-radius: 14px;
+  background: var(--ion-color-primary);
+}
+ion-content ion-card .main {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ion-content ion-card .main img {
+  width: 18px;
+}
+ion-content ion-card .files {
+  padding-top: 14px;
+}
+ion-content .container ion-item {
+  --background: rgba(255,255,255,.1);
+  padding: 0;
+  margin: 14px 0;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+ion-content .container ion-item ion-label {
+  padding: 6px 0;
+}
+ion-content .container ion-item ion-label h4 {
+  font-weight: 600;
+  font-size: 16px;
+}
+ion-content .container ion-item ion-label h6 {
+  color: rgba(255, 255, 255, 0.66);
+}
+ion-content .container h2 {
+  padding-bottom: 8px;
+}
+
+.info-row-col {
+  width: 30px;
+}
+
+ion-modal {
+  --background: #27232300 !important;
+}
+ion-modal .ion-page {
+  color: red !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+ion-modal ion-datetime {
+  border-radius: 8px;
+}
+ion-modal ion-datetime title {
+  color: red !important;
+}
+
+.calendar-day {
+  font-size: 20px;
+  --title-color: red;
+  background: red;
+  color: red;
+}
+
+.myModal {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: space-between;
+  contain: layout size style;
+  overflow: hidden;
+}
+
+.myModal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --width: 93vw;
+  --height: 93vh;
+  --border-radius: 10px;
+}
+.myModal .control {
+  background: #f7f7f7;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0px 16px 16px !important;
+}
+@-webkit-keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: medium;
+}/*# sourceMappingURL=global.css.map */

@@ -1,0 +1,87 @@
+<ion-header class="ion-no-border">
+	<!-- <ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-button>
+				<ion-icon name="apps"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+
+		<ion-buttons slot="end">
+			<ion-button class="bordered" fill="solid" color="light">
+				<ion-icon color="custom" name="notifications"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar> -->
+
+  <ion-item lines="none">
+
+		<ion-avatar slot="start">
+			<img src="assets/icon/gestor.png">
+    </ion-avatar>
+			<ion-label>
+				<p>Shalom,</p>
+				<h3>Bem vindo ao g_empresa</h3>
+			</ion-label>
+
+	</ion-item>
+
+</ion-header>
+
+<ion-content>
+  <app-info></app-info>
+
+
+
+  <div class="ion-text-end" style="padding-bottom: 28px; padding-top: 19px;">
+    <ion-button (click)="addDizimo()" class="btn">
+      <ion-icon name="add"></ion-icon>Registar Dízimo
+    </ion-button>
+  </div>
+
+  
+  
+  <ion-row style="border:1px primary; color:rgb(172, 170, 170); font-size: inherit;
+  background: #F5F6FA;
+  font-weight: bold;" class="espacoTabela">
+    <ion-col col-1>
+      <ion-label>#</ion-label>
+    </ion-col>
+    <ion-col col-3>
+      <ion-label>Valor</ion-label>
+    </ion-col>
+    <ion-col col-6>
+      <ion-label>Nome</ion-label>
+    </ion-col>
+    <ion-col col-2>
+      <ion-label>Data</ion-label>
+    </ion-col>
+  </ion-row>
+
+  <div *ngFor="let item of allDizimos; let index = index;" >
+    <ion-row class="espacoTabela" [ngClass]="{'linha1': (index%2)==1,'linha2': (index%2) == 0}" style="border-bottom: groove 0.0px; color: #508F82; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: small;  ">
+      <ion-col col-1>
+        <ion-label>{{index+1}}</ion-label>
+      </ion-col>
+      <ion-col col-3>
+        <ion-label>{{item.valor}}</ion-label>
+      </ion-col>
+      <ion-col col-6>
+        <ion-label>{{item.nome}}</ion-label>
+      </ion-col>
+      <ion-col col-2>
+        <ion-label>{{item.data | date:"yyyy/MM/dd"}}</ion-label>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+
+
+  
+
+
+</ion-content>

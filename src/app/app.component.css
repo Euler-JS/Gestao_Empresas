@@ -1,0 +1,16 @@
+ion-toolbar {
+  --background: var(--ion-color-primary);
+  color: #fff;
+  box-shadow: 0 0px 6px 0px rgba(0, 0, 0, 0.13);
+}
+ion-toolbar h3, ion-toolbar p {
+  color: #fff;
+}
+
+.info_bar {
+  --background: var(--ion-color-primary-dark);
+}
+
+.custom_menu {
+  --width: 75%;
+}/*# sourceMappingURL=app.component.css.map */

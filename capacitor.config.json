@@ -1,0 +1,6 @@
+{
+	"appId": "com.hack2021.g_empresa",
+	"appName": "g_empresa",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

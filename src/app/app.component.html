@@ -1,0 +1,77 @@
+<ion-app>
+  	<ion-toolbar >
+      <ion-item class="info_bar" lines="none">
+
+        <ion-avatar slot="start" (click)="openFirst()">
+          <ion-card>
+            <img src="assets/icon/gestor.png">
+          </ion-card>
+          
+        </ion-avatar>
+          <ion-label>
+            <p>Hello,</p>
+            <h3>Bem vindo ao Gestor de Despesas</h3>
+          </ion-label>
+    
+      </ion-item>
+	</ion-toolbar>
+  <ion-menu class="custom_menu" side="start" menuId="first">
+    <ion-header>
+      <ion-toolbar translucent>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+      <div class="menu-brand" style="
+      background-image: linear-gradient(var(--ion-color-primary) 0px, var(--ion-color-primary) 100%), url(assets/img/gestor.png);
+    background-size: cover;
+    height: 382px;
+    /* display: -webkit-flex; */
+    /* -webkit-align-items: center; */
+    display: flex;
+    align-items: center;flex-direction: column;
+    justify-content: center; position: relative;">
+    <ion-card>
+      <img src="assets/icon/ge.png" style="height: 100% ;margin: 0 auto; width: 100%;"><br>
+    </ion-card>
+    
+  <!-- <ion-note class="versio" style="margin-bottom: 0px;font-size: 10px;">v 7.0.0</ion-note> -->
+
+</div>
+    </ion-header>
+    <ion-content>
+      <ion-list lines="none" mode="md">
+        <ion-item [routerLink]="['/tabs/tab4']" (click)="close()">
+          <ion-icon name="home" slot="start"></ion-icon>
+          <ion-label>Início</ion-label>
+        </ion-item>
+        <ion-item (click)="close()" [routerLink]="['/relatorios']">
+          <ion-icon name="folder" slot="start"></ion-icon>
+          <ion-label>Relatórios</ion-label>
+        </ion-item>
+        <ion-item (click)="close()" [routerLink]="['/sobre']">
+          <ion-icon name="information-circle" slot="start"></ion-icon>
+          <ion-label>Sobre Gestor</ion-label>
+        </ion-item>
+        <!-- <ion-item>
+          <ion-icon name="chatbubbles" slot="start"></ion-icon>
+          <ion-label>Messages</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="settings" slot="start"></ion-icon>
+          <ion-label>Settings</ion-label>
+        </ion-item> -->
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <div class="ion-page" main>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Home</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  </div>
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>

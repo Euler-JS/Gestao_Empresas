@@ -1,0 +1,7 @@
+{
+  "name": "g_empresa",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
