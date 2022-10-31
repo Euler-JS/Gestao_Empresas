@@ -46,9 +46,12 @@
     <ion-col col-3>
       <ion-label>Data</ion-label>
     </ion-col>
+    <ion-col col-3>
+      <ion-label>Action</ion-label>
+    </ion-col>
   </ion-row>
 
-  <div *ngFor="let item of this.allprodutos; let index = index;" >
+  <div *ngFor="let item of this.addDataService.produtosArray; let index = index;" >
     <ion-row class="espacoTabela" [ngClass]="{'linha1': (index%2)==1,'linha2': (index%2) == 0}" style="border-bottom: groove 0.0px; color: #508F82; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: small;  ">
       <ion-col col-1>
         <ion-label>{{index+1}}</ion-label>
@@ -68,13 +71,19 @@
       <ion-col col-1>
         <ion-label>{{item.data | date:"yyyy/MM/dd"}}</ion-label>
       </ion-col>
+      <ion-col col-1>
+        <ion-row>
+          <ion-col (click)="editarRegistro(item)" col-1><ion-icon style="zoom: 2;" name="create"></ion-icon></ion-col>
+          <ion-col (click)="apagarRegistro(item.data)" col-1><ion-icon style="zoom: 2;" name="close"></ion-icon></ion-col>
+        </ion-row>
+      </ion-col>
     </ion-row>
   </div>
 
-  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
+  <!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
     <ion-infinite-scroll-content loadingSpinner="bubbles">
     </ion-infinite-scroll-content>
-  </ion-infinite-scroll>
+  </ion-infinite-scroll> -->
 
 
   

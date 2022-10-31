@@ -89,7 +89,7 @@ export class PdfExportService {
       for (let item of lista) {
         indice++;
         linhasTabela.push([
-          indice, item.valor, item.nome, tipo, item.data
+          indice, item.preco, item.nome, item.data
         ])
       }
     }
@@ -99,7 +99,7 @@ export class PdfExportService {
       footer: {
         columns: [
           {
-            text: 'Report : g_empresa System', alignment: 'right', fontSize: 9, margin: 20, italics: true,
+            text: 'Report : Gestor', alignment: 'right', fontSize: 9, margin: 20, italics: true,
             link: 'https://play.google.com/store/apps/details?id=com.equipmoz.kultuare', color: 'brown'
           },
         ]
@@ -111,7 +111,7 @@ export class PdfExportService {
         {
           margin: 0, color: '#443d34',
           alignment: 'center',
-          text: 'Report : g_empresa System' + '   -  ' + new Date().toISOString().substring(0,10) 
+          text: 'Report : Gestor' + '   -  ' + new Date().toISOString().substring(0,10) 
         },
         {
           margin: [0, 15, 0, 0],
@@ -139,7 +139,7 @@ export class PdfExportService {
           let utf8 = new Uint8Array(buffer);
           let binaryArray = utf8.buffer;
           let blob = new Blob([binaryArray], { type: 'application/pdf' });
-          let fileName = 'g_empresa_' + dataCulto + '_' + numeroCulto + '.pdf';
+          let fileName = 'gestor_' + dataCulto + '_' + numeroCulto + '.pdf';
           this.file.writeFile(this.file.externalDataDirectory, fileName, blob, { replace: true }).then(
             (fileEntry) => {
               // this.storage.set('k_lista_' + fileName, { file: fileName, path: this.file.externalDataDirectory + fileName }).then(pdf => {

@@ -20,6 +20,17 @@ export class Tab3Page {
       id_user: null
     };
 
+    produtoObject=
+    {
+      valor:'',
+      nome:'',
+      data:'',
+      preco: '',
+      quantidade: '',
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      id_user: null
+    };
+
     allprodutos: any;
     page = 1
   constructor(
@@ -37,7 +48,8 @@ export class Tab3Page {
   ionViewDidEnter() {
 
     try {
-      this.allprodutos = this.addDataService.produtosArray.slice(0,20);
+      this.allprodutos = this.addDataService.produtosArray;
+      // this.allprodutos = this.addDataService.produtosArray.slice(0,20);
       // this.allprodutos.reverse()
     } catch (error) {
       console.log('Array Vazio');
@@ -118,6 +130,67 @@ export class Tab3Page {
         event.target.disabled = true;
       }
     }, 200);
+  }
+
+  async editarRegistro(value)
+  {
+    let item = value
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Registar Despesa',
+      inputs: [
+        {
+          name: 'nome',
+          type: 'text',
+          placeholder: 'Digite o nome',
+          value: value.nome
+        },
+        {
+          name: 'preco',
+          type: 'number',
+          placeholder: 'Digite a preco',
+          value: value.preco
+        },
+        {
+          name: 'quantidade',
+          type: 'number',
+          placeholder: 'Digite a quantidade',
+          value: value.quantidade
+        },
+        // {
+        //   name: 'valor',
+        //   type: 'number',
+        //   placeholder: 'Digite o valor doado.'
+        // }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Confirm Cancel');
+          }
+        }, {
+          text: 'Ok',
+          handler: (val) => {
+            this.produtoObject.nome = val.nome;
+            this.produtoObject.preco = val.preco
+            this.produtoObject.quantidade = val.quantidade
+            this.produtoObject.data = item.data;
+            this.produtoObject.id_user = 11;
+            this.addDataService.produtosArray[this.addDataService.produtosArray.indexOf(item)] = this.produtoObject
+            this.addDataService.addDataOnStorage('produtos',JSON.stringify(this.addDataService.produtosArray));
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  async apagarRegistro(id){
+    this.addDataService.addDataOnStorage('produtos',JSON.stringify(this.addDataService.produtosArray.filter(registro=> registro.data != id)));
   }
 
 }

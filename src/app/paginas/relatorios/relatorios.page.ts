@@ -140,7 +140,7 @@ export class RelatoriosPage implements OnInit {
         this.offlineData.produtosArray.forEach(element => {
           this.gerarConteudo(element)
         });
-        this.linhasDaTabela.push(['#', 'Preco', 'Nome', 'Tipo', 'Data'])
+        this.linhasDaTabela.push(['#', 'Preco', 'Nome', 'Data'])
         break;
 
       case "dispesas_fixa":
